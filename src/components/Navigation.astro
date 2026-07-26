@@ -1,0 +1,104 @@
+---
+// src/components/Navigation.astro
+import { Image } from 'astro:assets';
+import logo from '../assets/pahblo-logo.png';
+
+const links = [
+  { name: 'Home', url: '/' },
+  { name: 'Services & Pricing', url: '/services' },
+  { name: 'Our Fleet', url: '/fleet' },
+  { name: 'Learner\'s Hub', url: '/resources' },
+  { name: 'Contact', url: '/contact' },
+];
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-red-600">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top Navigation">
+    <div class="w-full py-3 flex items-center justify-between">
+      
+      {/* Brand / Logo */}
+      <div class="flex items-center">
+        <a href="/" class="flex items-center gap-2 group">
+          <Image 
+            src={logo} 
+            alt="Pahblo Driving School Logo" 
+            width={180} 
+            height={60} 
+            class="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+        </a>
+      </div>
+      
+      {/* Desktop Navigation */}
+      <div class="hidden ml-10 space-x-8 lg:block">
+        {links.map((link) => (
+          <a 
+            href={link.url} 
+            class="text-sm font-bold text-slate-800 uppercase tracking-wide hover:text-red-600 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-amber-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+      
+      {/* Desktop CTA */}
+      <div class="hidden lg:ml-10 lg:flex lg:items-center">
+        <a 
+          href="https://wa.me/27820000000" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center px-6 py-2.5 border-2 border-transparent rounded-md shadow-sm text-sm font-bold uppercase tracking-wider text-white bg-green-600 hover:bg-green-500 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200"
+        >
+          Book Now
+        </a>
+      </div>
+
+      {/* Mobile Menu Button (Hamburger) */}
+      <div class="lg:hidden">
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="bg-slate-100 p-2 rounded-md text-slate-600 hover:text-red-600 hover:bg-slate-200 focus:outline-none transition-colors"
+        >
+          <span class="sr-only">Open menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    {/* Mobile Navigation Panel */}
+    <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-slate-100">
+      <div class="flex flex-col space-y-2">
+        {links.map((link) => (
+          <a 
+            href={link.url} 
+            class="block px-3 py-2 rounded-md text-base font-bold uppercase tracking-wide text-slate-800 hover:text-red-600 hover:bg-amber-50 transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+        <a 
+          href="https://wa.me/27820000000" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="mt-4 w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-bold uppercase tracking-wide text-white bg-green-600 hover:bg-green-500 active:scale-95 transition-all"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
