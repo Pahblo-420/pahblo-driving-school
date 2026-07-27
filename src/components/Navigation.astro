@@ -1,5 +1,4 @@
 ---
-// src/components/Navigation.astro
 import { Image } from 'astro:assets';
 import logo from '../assets/pahblo-logo.png';
 
@@ -10,43 +9,53 @@ const links = [
   { name: 'Learner\'s Hub', url: '/resources' },
   { name: 'Contact', url: '/contact' },
 ];
+
+// Get the current path to highlight the active menu item
+const currentPath = Astro.url.pathname;
+// Normalize the path to handle trailing slashes consistently
+const normalizedPath = currentPath === '/' ? '/' : currentPath.replace(/\/$/, '');
 ---
 
 <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-red-600">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top Navigation">
-    <div class="w-full py-3 flex items-center justify-between">
+    <div class="w-full py-2 flex items-center justify-between">
       
-      {/* Brand / Logo */}
+      {/* Brand / Logo - Height increased and aspect ratio corrected */}
       <div class="flex items-center">
-        <a href="/" class="flex items-center gap-2 group">
+        <a href="/" class="flex items-center gap-2 group py-1">
           <Image 
             src={logo} 
             alt="Pahblo Driving School Logo" 
-            width={180} 
-            height={60} 
-            class="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            width={300} 
+            height={300} 
+            class="h-15 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />
         </a>
       </div>
       
       {/* Desktop Navigation */}
       <div class="hidden ml-10 space-x-8 lg:block">
-        {links.map((link) => (
-          <a 
-            href={link.url} 
-            class="text-sm font-bold text-slate-800 uppercase tracking-wide hover:text-red-600 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-amber-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-          >
-            {link.name}
-          </a>
-        ))}
+        {links.map((link) => {
+          const isActive = normalizedPath === link.url;
+          return (
+            <a 
+              href={link.url} 
+              class={`text-sm font-bold uppercase tracking-wide relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0 after:bg-amber-500 after:transition-transform after:duration-300
+                ${isActive 
+                  ? 'text-red-600 after:scale-x-100 after:origin-bottom-left' 
+                  : 'text-slate-800 hover:text-red-600 after:scale-x-0 after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left'
+                }`}
+            >
+              {link.name}
+            </a>
+          );
+        })}
       </div>
       
       {/* Desktop CTA */}
       <div class="hidden lg:ml-10 lg:flex lg:items-center">
         <a 
-          href="https://wa.me/27820000000" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          href="/contact" 
           class="inline-flex items-center justify-center px-6 py-2.5 border-2 border-transparent rounded-md shadow-sm text-sm font-bold uppercase tracking-wider text-white bg-green-600 hover:bg-green-500 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200"
         >
           Book Now
@@ -70,20 +79,25 @@ const links = [
     
     {/* Mobile Navigation Panel */}
     <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-slate-100">
-      <div class="flex flex-col space-y-2">
-        {links.map((link) => (
-          <a 
-            href={link.url} 
-            class="block px-3 py-2 rounded-md text-base font-bold uppercase tracking-wide text-slate-800 hover:text-red-600 hover:bg-amber-50 transition-colors"
-          >
-            {link.name}
-          </a>
-        ))}
+      <div class="flex flex-col space-y-2 items-center">
+        {links.map((link) => {
+          const isActive = normalizedPath === link.url;
+          return (
+            <a 
+              href={link.url} 
+              class={`block w-full text-center px-3 py-2 rounded-md text-base font-bold uppercase tracking-wide transition-colors
+                ${isActive 
+                  ? 'text-red-600 bg-red-50' 
+                  : 'text-slate-800 hover:text-red-600 hover:bg-amber-50'
+                }`}
+            >
+              {link.name}
+            </a>
+          );
+        })}
         <a 
-          href="https://wa.me/27820000000" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="mt-4 w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-bold uppercase tracking-wide text-white bg-green-600 hover:bg-green-500 active:scale-95 transition-all"
+          href="/contact" 
+          class="mt-4 inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold uppercase tracking-wide text-white bg-green-600 hover:bg-green-500 active:scale-95 transition-all"
         >
           Book Now
         </a>

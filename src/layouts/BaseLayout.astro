@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -26,12 +27,13 @@ const {
     
     <Navigation />
 
-    <!-- The <slot /> is the exact spot where the content from your individual pages will render -->
+    <!-- The <slot /> is the exact spot where the content from individual pages will render -->
     <main class="flex-grow">
       <slot />
     </main>
 
-    {/* Footer component will go here */}
+    {/* Footer component */}
+    <Footer />
 
   </body>
 </html>
