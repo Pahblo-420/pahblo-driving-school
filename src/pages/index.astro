@@ -14,8 +14,11 @@ import fleetImage from '../assets/pahblo-fleet.png';
       <Image 
         src={heroImage} 
         alt="Pahblo Driving School Fleet and Instructor" 
-        width={1920} 
-        height={1080} 
+        width={1200} 
+        height={675} 
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
         class="w-full h-full object-cover object-center"
       />
       {/* Gradient overlay to make text pop against the background */}
@@ -119,12 +122,13 @@ import fleetImage from '../assets/pahblo-fleet.png';
       </div>
     </div>
   </section>
+  
   {/* Quick Services Snapshot */}
   <section class="py-24 bg-white border-t border-slate-200 overflow-x-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 class="text-4xl font-black text-slate-900 mb-8 uppercase tracking-tight italic">Ready for the <span class="text-amber-500">Road?</span></h2>
+          <h2 class="text-4xl font-black text-slate-900 mb-8 uppercase tracking-tight italic">Ready for the <span class="text-amber-600">Road?</span></h2>
           <ul class="space-y-6">
             {/* Learner's License - Red */}
             <li class="flex items-start group">
@@ -173,8 +177,8 @@ import fleetImage from '../assets/pahblo-fleet.png';
           <Image 
             src={fleetImage} 
             alt="Pahblo Driving School Fleet" 
-            width={1000} 
-            height={750} 
+            width={800} 
+            height={600} 
             class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
           />
           {/* Subtle overlay that fades out on hover */}
@@ -183,6 +187,7 @@ import fleetImage from '../assets/pahblo-fleet.png';
       </div>
     </div>
   </section>
+  
   {/* Testimonials Section */}
   <section class="py-24 bg-slate-900 relative overflow-hidden">
     {/* Traffic Light Gradient Top Border */}
