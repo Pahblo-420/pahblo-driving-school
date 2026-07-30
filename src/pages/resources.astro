@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Learner Hub & Resources - Pahblo Driving School">
+
+  {/* 1. HERO HEADER */}
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-900"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center drop-shadow-xl">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-xs font-black uppercase tracking-widest text-amber-400 mb-6 backdrop-blur-sm">
+        Pass First Time
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight italic mb-6">
+        The <span class="text-amber-500">Learner</span> <span class="text-green-500">Hub</span>
+      </h1>
+      <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto font-medium">
+        Your ultimate cheat sheet for mastering the K53 syllabus. From theory prep to yard maneuvers and DLTC paperwork.
+      </p>
+    </div>
+  </section>
+
+  {/* 2. TABBED CONTENT AREA */}
+  <section class="py-16 bg-slate-50 min-h-[800px]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* Tab Navigation */}
+      <div class="flex flex-col sm:flex-row border-b border-slate-300 mb-10 overflow-x-auto hide-scrollbar">
+        <button id="btn-theory" class="tab-btn active flex-1 py-4 px-6 text-center font-black uppercase tracking-widest text-sm border-b-4 border-amber-500 text-amber-600 transition-colors">
+          Theory (Learner's)
+        </button>
+        <button id="btn-practical" class="tab-btn flex-1 py-4 px-6 text-center font-black uppercase tracking-widest text-sm border-b-4 border-transparent text-slate-500 hover:text-slate-800 transition-colors">
+          Practical (Driver's)
+        </button>
+        <button id="btn-admin" class="tab-btn flex-1 py-4 px-6 text-center font-black uppercase tracking-widest text-sm border-b-4 border-transparent text-slate-500 hover:text-slate-800 transition-colors">
+          DLTC Admin Guide
+        </button>
+      </div>
+
+      {/* --- TAB 1: THEORY --- */}
+      <div id="tab-theory" class="tab-content animate-fade-in">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 mb-8">
+          <h2 class="text-2xl font-black text-slate-900 uppercase italic mb-4">The Theory Test Breakdown</h2>
+          <p class="text-slate-600 mb-8">The computer-based K53 Learner's test consists of 68 questions. You need a solid understanding of three core areas to pass.</p>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-amber-500 mb-4">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Rules of the Road</h3>
+              <p class="text-sm text-slate-500">Speed limits, right of way, and overtaking rules. (28 Questions - Pass mark: 22)</p>
+            </div>
+            
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-red-500 mb-4">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Road Signs</h3>
+              <p class="text-sm text-slate-500">Regulatory, warning, and guidance signs, plus road markings. (28 Questions - Pass mark: 23)</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-green-500 mb-4">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Vehicle Controls</h3>
+              <p class="text-sm text-slate-500">Identifying the steering, clutch, brakes, and indicator functions. (8 Questions - Pass mark: 6)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* --- TAB 2: PRACTICAL --- */}
+      <div id="tab-practical" class="tab-content hidden animate-fade-in">
+        <h2 class="text-2xl font-black text-slate-900 uppercase italic mb-6 text-center">The Pre-Trip & Yard Guide</h2>
+        
+        {/* Accordion 1 */}
+        <details class="group bg-white rounded-2xl border border-slate-200 mb-4 shadow-sm overflow-hidden" open>
+          <summary class="flex justify-between items-center cursor-pointer list-none p-6 font-bold text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">1</span>
+              Exterior Pre-Trip Inspection
+            </span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="p-6 pt-4 text-slate-600 text-sm border-t border-slate-100">
+            <p class="mb-4 font-medium">As you approach the vehicle, you must verbally confirm these points to the examiner:</p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Check under the vehicle for any leaks or obstructions.</li>
+              <li>Check that the wipers are intact and the windscreen is clean.</li>
+              <li>Check tire tread, pressure, and that the wheel nuts are tight.</li>
+              <li>Check headlights, indicators, and reflectors are clean and undamaged.</li>
+              <li>Ensure the fuel cap is secure.</li>
+            </ol>
+          </div>
+        </details>
+
+        {/* Accordion 2 */}
+        <details class="group bg-white rounded-2xl border border-slate-200 mb-4 shadow-sm overflow-hidden">
+          <summary class="flex justify-between items-center cursor-pointer list-none p-6 font-bold text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">2</span>
+              Interior Pre-Trip Inspection
+            </span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="p-6 pt-4 text-slate-600 text-sm border-t border-slate-100">
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Ensure all doors are securely closed.</li>
+              <li>Adjust the seat for proper pedal reach.</li>
+              <li>Adjust rearview and side mirrors.</li>
+              <li>Confirm the handbrake is firmly applied.</li>
+              <li>Confirm the gear lever is in neutral.</li>
+              <li>Turn key to 'ON' to check dashboard warning lights, then start the engine.</li>
+            </ol>
+          </div>
+        </details>
+
+        {/* Accordion 3 */}
+        <details class="group bg-white rounded-2xl border border-slate-200 mb-4 shadow-sm overflow-hidden">
+          <summary class="flex justify-between items-center cursor-pointer list-none p-6 font-bold text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center">3</span>
+              The Yard Test: Alley Docking
+            </span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="p-6 pt-4 text-slate-600 text-sm border-t border-slate-100">
+            <p class="mb-2"><strong>Goal:</strong> Reverse into a demarcated parking bay without touching the poles.</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Observation:</strong> Perform a full 360-degree blind spot check before moving.</li>
+              <li><strong>Speed:</strong> Use clutch control to move at a slow, walking pace.</li>
+              <li><strong>Correction:</strong> You are allowed two attempts to correct your position if you realize you are going to hit a pole. Stop, pull forward, and try the reverse again.</li>
+              <li><strong>Roll back:</strong> Rolling forward while attempting to reverse is an immediate fail.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      {/* --- TAB 3: ADMIN --- */}
+      <div id="tab-admin" class="tab-content hidden animate-fade-in">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 text-center">
+          <div class="w-16 h-16 mx-auto bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          </div>
+          <h2 class="text-2xl font-black text-slate-900 uppercase italic mb-4">Phuthaditjhaba DLTC Checklist</h2>
+          <p class="text-slate-600 mb-8 max-w-xl mx-auto">Don't get turned away at the door. When going to book your learner's or driver's test, you must have the following documents ready:</p>
+          
+          <ul class="text-left max-w-sm mx-auto space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              <span class="font-medium text-slate-700">Original ID Book or Smart Card</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              <span class="font-medium text-slate-700">Clear Copy of your ID</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              <span class="font-medium text-slate-700">2x Black and White ID Photos</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              <span class="font-medium text-slate-700">Proof of Residence (Not older than 3 months)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span class="font-medium text-slate-700">Booking Fee in Cash (Card machines often offline)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* 3. DOWNLOADS & CTA */}
+  <section class="py-20 bg-slate-900 border-t border-slate-800 text-center px-4">
+    <h2 class="text-3xl font-black text-white uppercase italic mb-6">Need more help?</h2>
+    <p class="text-slate-400 mb-10 max-w-xl mx-auto font-medium">
+      Theory is only half the battle. Put these rules into practice with one of our certified instructors.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-black text-slate-900 uppercase tracking-widest bg-amber-500 hover:bg-amber-400 shadow-xl shadow-amber-500/40 transition-all duration-300">
+        Book a Practice Lesson
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+{/* CLIENT-SIDE TAB LOGIC */}
+<script>
+  // Wait for the DOM to fully load
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    // We tell TypeScript exactly what type of elements these are
+    const tabs = [
+      { 
+        btn: document.getElementById('btn-theory') as HTMLButtonElement | null, 
+        content: document.getElementById('tab-theory') as HTMLElement | null 
+      },
+      { 
+        btn: document.getElementById('btn-practical') as HTMLButtonElement | null, 
+        content: document.getElementById('tab-practical') as HTMLElement | null 
+      },
+      { 
+        btn: document.getElementById('btn-admin') as HTMLButtonElement | null, 
+        content: document.getElementById('tab-admin') as HTMLElement | null 
+      }
+    ];
+
+    // Added ": number" to define the activeIndex type
+    function switchTab(activeIndex: number) {
+      tabs.forEach((tab, index) => {
+        if (!tab.btn || !tab.content) return; // Safety check
+
+        if (index === activeIndex) {
+          // Active state styles
+          tab.btn.classList.add('border-amber-500', 'text-amber-600');
+          tab.btn.classList.remove('border-transparent', 'text-slate-500');
+          tab.content.classList.remove('hidden');
+        } else {
+          // Inactive state styles
+          tab.btn.classList.remove('border-amber-500', 'text-amber-600');
+          tab.btn.classList.add('border-transparent', 'text-slate-500');
+          tab.content.classList.add('hidden');
+        }
+      });
+    }
+
+    // Attach click events
+    tabs.forEach((tab, index) => {
+      if (tab.btn) {
+        tab.btn.addEventListener('click', () => switchTab(index));
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Simple fade-in animation for tab content */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Hide scrollbar for mobile tab scrolling */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

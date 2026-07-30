@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import fleetHero from '../assets/fleet-hero.png';
+import code08Fleet from '../assets/code08-fleet.png';
+import code10Fleet from '../assets/code10_14-fleet.png';
+---
+
+<BaseLayout title="Our Fleet - Pahblo Driving School">
+
+  {/* 1. HERO HEADER */}
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 z-0 bg-slate-900">
+      {/* Fleet Hero Image */}
+      <img 
+        src={fleetHero.src} 
+        alt="Pahblo Driving School Fleet Lineup" 
+        class="w-full h-full object-cover opacity-60"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center drop-shadow-xl">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-xs font-black uppercase tracking-widest text-slate-300 mb-6 backdrop-blur-sm">
+        Premium Training Vehicles
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight italic mb-6">
+        Meet <span class="text-red-600">Our</span> <span class="text-amber-500">Training</span> <span class="text-green-500">Fleet</span>
+      </h1>
+      <p class="mt-4 text-xl text-slate-100 max-w-2xl mx-auto font-medium drop-shadow-md">
+        Modern, clean, and fully K53-compliant. Train in vehicles specifically chosen and modified for your safety and test success.
+      </p>
+    </div>
+  </section>
+
+  {/* 2. THE FLEET SHOWCASE */}
+  <section class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* Code 8 Vehicle (Amber Theme) */}
+      <div class="flex flex-col lg:flex-row items-center gap-12 mb-24 group">
+        <div class="w-full lg:w-1/2 relative">
+          <div class="absolute inset-0 bg-amber-500 rounded-3xl translate-x-4 translate-y-4 opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+          
+          {/* Code 8 Image Block */}
+          <div class="relative aspect-4/3 bg-slate-200 rounded-3xl overflow-hidden border border-slate-300 shadow-xl">
+            <img 
+              src={code08Fleet.src} 
+              alt="Code 8 Training Vehicle" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 lg:pl-8">
+          <div class="text-amber-500 font-black uppercase tracking-widest text-sm mb-2">Light Motor Vehicles</div>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tight italic mb-6">Code 8 Fleet</h2>
+          <p class="text-slate-600 font-medium text-lg mb-8 leading-relaxed">
+            Our Code 8 vehicles are easy-to-handle hatchbacks equipped with dual controls. Their compact size makes mastering yard maneuvers like alley docking and parallel parking significantly easier for beginners.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-amber-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Instructor Dual-Pedal System
+            </li>
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-amber-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Power Steering & Air Conditioning
+            </li>
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-amber-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Optimized Mirror Setup for K53 Observations
+            </li>
+          </ul>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-black text-slate-900 uppercase tracking-widest bg-amber-500 hover:bg-amber-400 shadow-xl shadow-amber-500/40 transition-all duration-300">
+            Book a Code 8 Lesson
+          </a>
+        </div>
+      </div>
+
+      {/* Code 10/14 Vehicle (Red Theme) */}
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-12 group">
+        <div class="w-full lg:w-1/2 relative">
+          <div class="absolute inset-0 bg-red-600 rounded-3xl -translate-x-4 translate-y-4 opacity-20 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+          
+          {/* Code 10/14 Image Block */}
+          <div class="relative aspect-4/3 bg-slate-200 rounded-3xl overflow-hidden border border-slate-300 shadow-xl">
+            <img 
+              src={code10Fleet.src} 
+              alt="Code 10 and 14 Training Trucks" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 lg:pr-8">
+          <div class="text-red-600 font-black uppercase tracking-widest text-sm mb-2">Heavy Motor Vehicles</div>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tight italic mb-6">Code 10 & 14 Fleet</h2>
+          <p class="text-slate-600 font-medium text-lg mb-8 leading-relaxed">
+            Built for visibility and control. Our heavy motor vehicles are perfectly configured for the K53 yard test. They offer excellent turning radiuses and clear sightlines, making reverse maneuvers highly predictable.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Exceptional Yard Maneuverability
+            </li>
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Fully Certified for DLTC Road Tests
+            </li>
+            <li class="flex items-center text-slate-700 font-bold">
+              <svg class="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              Elevated Cabin for Maximum Road Visibility
+            </li>
+          </ul>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-black text-white uppercase tracking-widest bg-red-600 hover:bg-red-500 shadow-xl transition-all duration-300">
+            Book a Code 10 Lesson
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* 3. SAFETY & STANDARDS GRID */}
+  <section class="py-24 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tight italic mb-4">
+          Uncompromising <span class="text-green-500">Safety</span> Standards
+        </h2>
+        <p class="text-slate-600 font-medium">
+          We don't cut corners when it comes to the vehicles you learn in. Every car in our fleet is maintained to the highest mechanical standards.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-slate-300 transition-colors">
+          <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">Roadworthy Certified</h4>
+          <p class="text-sm text-slate-500 font-medium">Regularly inspected to meet and exceed all traffic department requirements.</p>
+        </div>
+        
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-slate-300 transition-colors">
+          <div class="w-16 h-16 mx-auto bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">Dealer Serviced</h4>
+          <p class="text-sm text-slate-500 font-medium">Strict maintenance schedules ensure our vehicles never miss a beat during your test.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-slate-300 transition-colors">
+          <div class="w-16 h-16 mx-auto bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">Immaculately Clean</h4>
+          <p class="text-sm text-slate-500 font-medium">Deep-cleaned interiors provide a professional, stress-free environment for learning.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-slate-300 transition-colors">
+          <div class="w-16 h-16 mx-auto bg-slate-200 text-slate-700 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">Dual Controls</h4>
+          <p class="text-sm text-slate-500 font-medium">Instructor overrides guarantee safety while you build your on-road confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 4. FLEET CTA */}
+  <section class="relative py-24 bg-slate-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight italic mb-6">
+        Ready to take the <span class="text-amber-500">Wheel?</span>
+      </h2>
+      <p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
+        Whether you are learning to drive for the first time or upgrading to a heavy motor vehicle, our QwaQwa-based fleet is ready for you.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-black text-slate-900 uppercase tracking-widest bg-amber-500 hover:bg-amber-400 shadow-xl shadow-amber-500/40 transition-all duration-300">
+          Book Your Lesson
+        </a>
+        <a href="https://wa.me/27000000000" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-black text-white uppercase tracking-widest bg-slate-800 border border-slate-600 hover:bg-slate-700 transition-all duration-300">
+          Ask a Question
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
